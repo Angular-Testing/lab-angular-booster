@@ -1,31 +1,39 @@
-# 🚀 AngularBooster
+# 🔬 Laboratorio de prácticas Angular Testing
 
-## Rocket launches consulting web. 
-### Example of an Angular application used for training.
+## 🚀 Web de consulta de lanzamientos de cohetes
 
+> Sujeto bajo pruebas para el ejercicio práctico del [Curso Angular Testing](https://trainingit.es/curso-angular-testing/).
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.1.
+---
 
-## Development server
+## 🎯 Objetivos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Poner en práctica los conceptos explicados
+- Replicar las demostraciones vistas
+- Usar como _sandbox_ para investigar y ejercitar
 
-## Code scaffolding
+## 📋 Tareas propuestas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### 1 - Servicio de consulta de próximos lanzamientos
 
-## Build
+- [SUT: src\app\core\space.service.ts](https://github.com/Angular-Testing/lab-angular-booster/blob/c22808854cf80c4e1f16ea3651d1f6e7699ff57d/src/app/core/space.service.ts#L1)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- Comprobar que el método `getUpcomingLaunches$` invoca la _url_ adecuada.
 
-## Running unit tests
+### 2 - Componente para visualizar un lanzamiento
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- [SUT: src\app\shared\launch-card\launch-card.component.ts](https://github.com/Angular-Testing/lab-angular-booster/blob/c22808854cf80c4e1f16ea3651d1f6e7699ff57d/src/app/shared/launch-card/launch-card.component.ts#L29)
 
-## Running end-to-end tests
+- Comprobar mediante un _HostComponent_ que las propiedades `@Input` y los eventos `@Output` están correctamente enlazados con la plantilla.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### 3 - Página de consulta por texto y límite
 
-## Further help
+- [SUT: src\app\search\search.component.ts](https://github.com/Angular-Testing/lab-angular-booster/blob/c22808854cf80c4e1f16ea3651d1f6e7699ff57d/src/app/search/search.component.ts)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Comprobar que al rellenar el formulario y pulsar el botón _submit_ se llama a `getSearchedLaunches$` una vez con los argumentos adecuados.
+
+### 4 - Agregar un lanzamiento a la lista de favoritos
+
+- [SUT: la aplicación en ejecución](http://localhost:4200/)
+
+- Usando _Cypress_ probar que permite agregar a favoritos.
